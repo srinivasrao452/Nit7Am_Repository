@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Enquiry Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        form{
+            background-color: chocolate;
+            padding: 30px;
+            border: 5px solid blue;
+            border-radius: 10px;
+            box-shadow: 5px 5px 22px red, -5px -5px 22px black;
+            margin: 20px 0;
+        }
+        td{
+            padding: 10px
+        }
+        ul{
+            list-style-type: none
+        }
+        #id_course{
+            display: inline-flex;
+        }
+        #id_location{
+            display: inline-flex;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+       <div class="row">
+           <div class="col-md-3"></div>
+           <div class="col-md-6">
+               <form method="POST">
+                   {% csrf_token %}
+                   <table>
+                       {{ form }}
+                   </table>
+                   <input type="submit" value="Send Data" class="btn btn-success"
+                          style="margin-left: 100px;">
+               </form>
+           </div>
+       </div>
+   </div>
+</body>
+</html>
